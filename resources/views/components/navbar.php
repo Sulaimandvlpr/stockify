@@ -10,13 +10,13 @@
             <div class="flex items-center gap-space-sm">
 
                 <img
-                    src="https://lh3.googleusercontent.com/aida/AEtjO1Xu7T1kFtag1zSVGLHVlbH0zKTmsxLIYZ9_p4tZrKUiKIHz_yFsL49u0BPaCir52LGqq2AyH6SaFHvvDD7owHnNmslwk8rItqURV94CpdBYYSFwKcT2yue-oXuk1p7FWkNa-TkbKnKU-Dx6zW8oxhKcS-qf9ZSowgJ5l5QytXKMIoPT3OohCWUBggxci3axEx9amOOyOBo7yl6ugGuteDPjtE5E58blCco4CR2P-x6ujg"
+                    src="/stockify/public/assets/images/logo.png"
                     alt="stockon logo"
                     class="h-8 w-auto object-contain"
                 >
 
                 <span class="font-headline-sm text-headline-sm text-primary font-bold lowercase tracking-tight">
-                    stockon
+                   
                 </span>
 
             </div>
