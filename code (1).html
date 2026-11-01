@@ -1,0 +1,1649 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c4c7c7",
+              "on-background": "#1a1b1f",
+              "secondary-fixed-dim": "#ffb4a3",
+              "on-secondary-container": "#640f00",
+              "primary-container": "#1c1b1b",
+              "secondary-container": "#fd6a49",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#1c1b1b",
+              "surface-container-low": "#f4f3f8",
+              "on-secondary-fixed": "#3d0600",
+              "tertiary-fixed-dim": "#c6c6c8",
+              "tertiary-container": "#1a1c1d",
+              "on-tertiary-fixed": "#1a1c1d",
+              "on-surface": "#1a1b1f",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#838486",
+              secondary: "#ae3115",
+              "surface-variant": "#e3e2e7",
+              "on-primary": "#ffffff",
+              surface: "#faf9fe",
+              "surface-container-high": "#e9e7ed",
+              "secondary-fixed": "#ffdad2",
+              "surface-dim": "#dad9df",
+              "surface-container": "#eeedf3",
+              "inverse-primary": "#c8c6c5",
+              "primary-fixed": "#e5e2e1",
+              "inverse-surface": "#2f3034",
+              "inverse-on-surface": "#f1f0f5",
+              "on-error-container": "#93000a",
+              outline: "#747878",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#e2e2e4",
+              "on-surface-variant": "#444748",
+              "primary-fixed-dim": "#c8c6c5",
+              "on-primary-fixed-variant": "#474646",
+              primary: "#000000",
+              "surface-bright": "#faf9fe",
+              "surface-container-lowest": "#ffffff",
+              tertiary: "#000000",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e3e2e7",
+              error: "#ba1a1a",
+              "on-tertiary-fixed-variant": "#454749",
+              "on-primary-container": "#858383",
+              background: "#faf9fe",
+              "on-secondary-fixed-variant": "#8c1900",
+              "surface-tint": "#5f5e5e",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "space-xl": "2.5rem",
+              gutter: "1.5rem",
+              "space-lg": "1.5rem",
+              "margin-mobile": "1rem",
+              margin: "2rem",
+              "gutter-sm": "1rem",
+              "space-md": "1rem",
+              "space-xs": "0.25rem",
+              "space-sm": "0.5rem",
+            },
+            fontFamily: {
+              "body-lg": ["DM Sans"],
+              "label-lg": ["DM Sans"],
+              "label-sm": ["DM Sans"],
+              "body-sm": ["DM Sans"],
+              "headline-md": ["Space Grotesk"],
+              "headline-lg": ["Space Grotesk"],
+              "headline-xl-mobile": ["Space Grotesk"],
+              "label-md": ["DM Sans"],
+              "headline-sm": ["Space Grotesk"],
+              "headline-xl": ["Space Grotesk"],
+              "body-md": ["DM Sans"],
+            },
+            fontSize: {
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-lg": ["14px", { lineHeight: "18px", fontWeight: "600" }],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "12px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                {
+                  lineHeight: "30px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "38px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-xl-mobile": [
+                "36px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+              "headline-sm": [
+                "18px",
+                {
+                  lineHeight: "24px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-xl": [
+                "56px",
+                {
+                  lineHeight: "60px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b-[1.5px] border-primary"
+    >
+      <div class="w-full px-margin h-16 flex items-center justify-between">
+        <div class="flex items-center gap-space-xl">
+          <div class="flex items-center gap-space-sm">
+            <img
+              alt="stockon logo"
+              class="h-8 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1Xu7T1kFtag1zSVGLHVlbH0zKTmsxLIYZ9_p4tZrKUiKIHz_yFsL49u0BPaCir52LGqq2AyH6SaFHvvDD7owHnNmslwk8rItqURV94CpdBYYSFwKcT2yue-oXuk1p7FWkNa-TkbKnKU-Dx6zW8oxhKcS-qf9ZSowgJ5l5QytXKMIoPT3OohCWUBggxci3axEx9amOOyOBo7yl6ugGuteDPjtE5E58blCco4CR2P-x6ujg"
+            /><span
+              class="font-headline-sm text-headline-sm text-primary font-bold lowercase tracking-tight"
+              >stockon</span
+            >
+          </div>
+          <nav
+            class="hidden lg:flex items-center gap-space-sm"
+            data-active-classes="bg-primary text-on-primary rounded-full px-space-md py-space-xs font-label-md text-label-md shadow-[2px_2px_0px_#000000]"
+          >
+            <a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-space-xs rounded-full transition-all"
+              data-path="overview"
+              href="#"
+              >Overview</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-space-xs rounded-full transition-all"
+              data-path="inventory"
+              href="#"
+              >Inventory</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-space-xs rounded-full transition-all"
+              data-path="warehouses"
+              href="#"
+              >Warehouses</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-space-xs rounded-full transition-all"
+              data-path="shipments"
+              href="#"
+              >Shipments</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-space-xs rounded-full transition-all"
+              data-path="analytics"
+              href="#"
+              >Analytics</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-space-xs rounded-full transition-all"
+              data-path="settings"
+              href="#"
+              >Settings</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <a
+            class="hidden sm:inline-block font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
+            data-path="help-docs"
+            href="#"
+            >Help &amp; Docs</a
+          ><button
+            class="flex items-center gap-space-xs bg-primary text-on-primary border-[1.5px] border-primary rounded-full px-space-md py-space-xs font-label-md text-label-md shadow-[2px_2px_0px_#000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[16px]">add</span
+            ><span>Add Product</span>
+          </button>
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center border-[1.5px] border-primary shadow-[2px_2px_0px_#000000]"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-16 bg-surface flex-1">
+      <div class="flex flex-col w-full">
+        <!-- Content Container with established outer margin and spacing -->
+        <div class="w-full px-margin py-space-lg flex flex-col gap-space-lg">
+          <!-- Top Headline & Action Header -->
+          <section
+            class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md"
+          >
+            <div class="flex flex-col gap-space-xs max-w-2xl">
+              <div class="inline-flex items-center gap-space-xs">
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-secondary-container"
+                ></span>
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                  >Global Master Ledger</span
+                >
+                <span class="text-outline-variant text-[10px]">/</span>
+                <span
+                  class="font-label-sm text-label-sm font-mono text-on-surface"
+                  >FACILITY SYNC: ACTIVE</span
+                >
+              </div>
+              <h1
+                class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight"
+              >
+                Complete stock &amp; warehouse directory
+              </h1>
+              <p
+                class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+              >
+                Monitor batch levels, safety stock thresholds, multi-facility
+                storage allocations, and barcode identifiers in real time.
+              </p>
+            </div>
+            <!-- Action Button Group -->
+            <div
+              class="flex flex-wrap items-center gap-space-sm pt-space-xs lg:pt-0"
+            >
+              <button
+                class="group flex items-center gap-space-xs bg-surface-container-lowest text-primary rounded-full px-space-md py-space-sm font-label-md text-label-md border-2 border-primary shadow-[3px_3px_0px_#000000] hover:bg-surface-variant active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >file_download</span
+                >
+                <span>Export CSV / Report</span>
+              </button>
+              <button
+                class="flex items-center gap-space-xs bg-surface-container-lowest text-primary rounded-full px-space-md py-space-sm font-label-md text-label-md border-2 border-primary shadow-[3px_3px_0px_#000000] hover:bg-surface-variant active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >checklist</span
+                >
+                <span>Bulk Actions</span>
+                <span class="material-symbols-outlined text-[16px]"
+                  >expand_more</span
+                >
+              </button>
+              <button
+                class="flex items-center gap-space-xs bg-primary text-on-primary rounded-full px-space-lg py-space-sm font-label-md text-label-md border-2 border-primary shadow-[4px_4px_0px_#000000] hover:bg-secondary active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-[18px]">add</span>
+                <span>+ Add New SKU</span>
+              </button>
+            </div>
+          </section>
+          <!-- Key Metrics Ribbon (Tactile Neo-Brutalist Bento Cards) -->
+          <section
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter"
+          >
+            <!-- Metric 1: Total Units -->
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-space-md border-2 border-primary shadow-[4px_4px_0px_#000000] flex flex-col justify-between transition-all hover:-translate-y-0.5"
+            >
+              <div
+                class="flex items-center justify-between pb-space-sm border-b-[1.5px] border-primary"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                  >Total Units in Stock</span
+                >
+                <span
+                  class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-primary"
+                    >inventory_2</span
+                  >
+                </span>
+              </div>
+              <div class="pt-space-md flex flex-col gap-space-xs">
+                <span
+                  class="font-headline-lg text-headline-lg font-bold text-primary font-mono"
+                  >14,820</span
+                >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="bg-surface-container-low px-space-xs py-[2px] rounded-full border border-primary text-[11px] font-mono font-bold text-primary"
+                    >+420 this week</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >across 4 hubs</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Metric 2: Critical / Reorder Needed (Highlighted Warm Coral Accent Card) -->
+            <div
+              class="bg-secondary-container text-on-primary rounded-2xl p-space-md border-2 border-primary shadow-[4px_4px_0px_#000000] flex flex-col justify-between transition-all hover:-translate-y-0.5"
+            >
+              <div
+                class="flex items-center justify-between pb-space-sm border-b-[1.5px] border-primary"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold"
+                  >Low Reserve / Urgent</span
+                >
+                <span
+                  class="w-7 h-7 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center border-[1.5px] border-primary"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >priority_high</span
+                  >
+                </span>
+              </div>
+              <div class="pt-space-md flex flex-col gap-space-xs">
+                <span
+                  class="font-headline-lg text-headline-lg font-bold text-primary font-mono"
+                  >14 SKUs</span
+                >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="bg-primary text-on-primary px-space-xs py-[2px] rounded-full text-[11px] font-mono font-bold"
+                    >Needs reorder</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-primary font-medium"
+                    >below safety min</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Metric 3: Total Asset Valuation -->
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-space-md border-2 border-primary shadow-[4px_4px_0px_#000000] flex flex-col justify-between transition-all hover:-translate-y-0.5"
+            >
+              <div
+                class="flex items-center justify-between pb-space-sm border-b-[1.5px] border-primary"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                  >Current Asset Value</span
+                >
+                <span
+                  class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-primary"
+                    >payments</span
+                  >
+                </span>
+              </div>
+              <div class="pt-space-md flex flex-col gap-space-xs">
+                <span
+                  class="font-headline-lg text-headline-lg font-bold text-primary font-mono"
+                  >$2,481,205</span
+                >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="bg-surface-container-low px-space-xs py-[2px] rounded-full border border-primary text-[11px] font-mono font-bold text-primary"
+                    >Avg Margin 38.4%</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >cost parity</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Metric 4: Inbound Active Pipeline -->
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-space-md border-2 border-primary shadow-[4px_4px_0px_#000000] flex flex-col justify-between transition-all hover:-translate-y-0.5"
+            >
+              <div
+                class="flex items-center justify-between pb-space-sm border-b-[1.5px] border-primary"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                  >Inbound Pipeline</span
+                >
+                <span
+                  class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-primary"
+                    >local_shipping</span
+                  >
+                </span>
+              </div>
+              <div class="pt-space-md flex flex-col gap-space-xs">
+                <span
+                  class="font-headline-lg text-headline-lg font-bold text-primary font-mono"
+                  >3 Batches</span
+                >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="bg-surface-container-high px-space-xs py-[2px] rounded-full border border-primary text-[11px] font-mono font-bold text-primary"
+                    >Arriving today</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >1,200 incoming</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Facility Selector Tabs & Multi-Param Filtering Bar -->
+          <section class="flex flex-col gap-space-md">
+            <!-- Facility Tabs Strip -->
+            <div
+              class="flex items-center gap-space-xs overflow-x-auto pb-space-xs no-scrollbar"
+            >
+              <button
+                class="whitespace-nowrap px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md border-2 border-primary shadow-[2px_2px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                type="button"
+              >
+                All Warehouses
+                <span class="ml-1 opacity-75 font-mono">(14,820)</span>
+              </button>
+              <button
+                class="whitespace-nowrap px-space-md py-space-xs rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md border-2 border-primary hover:bg-surface-variant shadow-[2px_2px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                type="button"
+              >
+                Sector B-04 Chicago
+                <span class="ml-1 text-on-surface-variant font-mono"
+                  >(4,120)</span
+                >
+              </button>
+              <button
+                class="whitespace-nowrap px-space-md py-space-xs rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md border-2 border-primary hover:bg-surface-variant shadow-[2px_2px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                type="button"
+              >
+                Bay 12 Austin
+                <span class="ml-1 text-on-surface-variant font-mono"
+                  >(3,410)</span
+                >
+              </button>
+              <button
+                class="whitespace-nowrap px-space-md py-space-xs rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md border-2 border-primary hover:bg-surface-variant shadow-[2px_2px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                type="button"
+              >
+                East Hub Newark
+                <span class="ml-1 text-on-surface-variant font-mono"
+                  >(5,290)</span
+                >
+              </button>
+              <button
+                class="whitespace-nowrap px-space-md py-space-xs rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md border-2 border-primary hover:bg-surface-variant shadow-[2px_2px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                type="button"
+              >
+                West Dock Seattle
+                <span class="ml-1 text-on-surface-variant font-mono"
+                  >(2,000)</span
+                >
+              </button>
+            </div>
+            <!-- Search, Detailed Filter Controls and View Toggle Bar -->
+            <div
+              class="bg-surface-container-lowest p-space-md rounded-2xl border-2 border-primary shadow-[4px_4px_0px_#000000] flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md"
+            >
+              <!-- Search Field -->
+              <div class="relative flex-1">
+                <span
+                  class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]"
+                  >search</span
+                >
+                <input
+                  class="w-full bg-surface pl-11 pr-space-md py-space-xs rounded-xl border-[1.5px] border-primary font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:shadow-[2px_2px_0px_#000000] transition-shadow"
+                  placeholder="Search SKU, serial number, product name, or bin location..."
+                  type="text"
+                />
+              </div>
+              <!-- Filter Dropdown Modules -->
+              <div class="flex flex-wrap items-center gap-space-sm">
+                <!-- Status Dropdown -->
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-surface pl-space-md pr-8 py-space-xs rounded-xl border-[1.5px] border-primary font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer shadow-[2px_2px_0px_#000000]"
+                  >
+                    <option>Stock Status: All</option>
+                    <option>In Stock / Optimal</option>
+                    <option>Low Reserve</option>
+                    <option>Out of Stock</option>
+                    <option>In Transit</option>
+                  </select>
+                  <span
+                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-primary text-[16px]"
+                    >arrow_drop_down</span
+                  >
+                </div>
+                <!-- Category Dropdown -->
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-surface pl-space-md pr-8 py-space-xs rounded-xl border-[1.5px] border-primary font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer shadow-[2px_2px_0px_#000000]"
+                  >
+                    <option>Category: All Types</option>
+                    <option>Hardware &amp; Chassis</option>
+                    <option>Energy Storage</option>
+                    <option>Assembly Kits</option>
+                    <option>Semiconductors</option>
+                    <option>Actuators &amp; Drives</option>
+                    <option>Composites</option>
+                    <option>Consumables</option>
+                  </select>
+                  <span
+                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-primary text-[16px]"
+                    >arrow_drop_down</span
+                  >
+                </div>
+                <!-- Sort Order Dropdown -->
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-surface pl-space-md pr-8 py-space-xs rounded-xl border-[1.5px] border-primary font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer shadow-[2px_2px_0px_#000000]"
+                  >
+                    <option>Sort: Quantity (High-Low)</option>
+                    <option>Sort: Total Valuation</option>
+                    <option>Sort: Critical Priority First</option>
+                    <option>Sort: Recently Audited</option>
+                  </select>
+                  <span
+                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-primary text-[16px]"
+                    >arrow_drop_down</span
+                  >
+                </div>
+                <!-- View Switcher -->
+                <div
+                  class="flex items-center bg-surface-container rounded-xl p-[2px] border-[1.5px] border-primary"
+                >
+                  <button
+                    aria-label="Table View"
+                    class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center border border-primary shadow-[1px_1px_0px_#000000]"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >table_rows</span
+                    >
+                  </button>
+                  <button
+                    aria-label="Card Grid View"
+                    class="w-8 h-8 rounded-lg text-on-surface-variant flex items-center justify-center hover:text-on-surface"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >grid_view</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Main Inventory Data Table (Neo-Brutalist Panel) -->
+          <section
+            class="bg-surface-container-lowest rounded-3xl border-2 border-primary shadow-[5px_5px_0px_#000000] overflow-hidden flex flex-col"
+          >
+            <!-- Table Header Bar / Meta Count -->
+            <div
+              class="px-space-lg py-space-md border-b-2 border-primary flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low"
+            >
+              <div class="flex items-center gap-space-sm">
+                <span
+                  class="font-headline-sm text-headline-sm font-bold text-primary"
+                  >Warehouse Item Directory</span
+                >
+                <span
+                  class="bg-primary text-on-primary px-space-sm py-[2px] rounded-full font-label-sm text-label-sm font-mono"
+                  >14,820 SKUs RECORDED</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-[#22C55E] border border-primary"
+                ></span>
+                <span>Automated inventory count accurate as of 14:02 UTC</span>
+              </div>
+            </div>
+            <!-- Responsive Table Container -->
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr
+                    class="border-b-2 border-primary bg-surface font-label-md text-label-md text-on-surface"
+                  >
+                    <th
+                      class="py-space-md px-space-lg w-12 text-center"
+                      scope="col"
+                    >
+                      <input
+                        class="w-4 h-4 rounded border-2 border-primary accent-primary cursor-pointer"
+                        type="checkbox"
+                      />
+                    </th>
+                    <th
+                      class="py-space-md px-space-md font-bold uppercase tracking-wider text-xs"
+                      scope="col"
+                    >
+                      SKU &amp; Item Details
+                    </th>
+                    <th
+                      class="py-space-md px-space-md font-bold uppercase tracking-wider text-xs"
+                      scope="col"
+                    >
+                      Category
+                    </th>
+                    <th
+                      class="py-space-md px-space-md font-bold uppercase tracking-wider text-xs"
+                      scope="col"
+                    >
+                      Facility &amp; Bin
+                    </th>
+                    <th
+                      class="py-space-md px-space-md font-bold uppercase tracking-wider text-xs text-right"
+                      scope="col"
+                    >
+                      Available Stock
+                    </th>
+                    <th
+                      class="py-space-md px-space-md font-bold uppercase tracking-wider text-xs text-right"
+                      scope="col"
+                    >
+                      Unit / Value
+                    </th>
+                    <th
+                      class="py-space-md px-space-md font-bold uppercase tracking-wider text-xs text-center"
+                      scope="col"
+                    >
+                      Health Status
+                    </th>
+                    <th
+                      class="py-space-md px-space-lg font-bold uppercase tracking-wider text-xs text-right"
+                      scope="col"
+                    >
+                      Quick Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="divide-y-[1.5px] divide-primary font-body-md text-body-md text-on-surface"
+                >
+                  <!-- Item Row 1 -->
+                  <tr class="hover:bg-surface transition-colors">
+                    <td class="py-space-md px-space-lg text-center">
+                      <input
+                        class="w-4 h-4 rounded border-2 border-primary accent-primary cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-xl bg-surface-container border-[1.5px] border-primary flex items-center justify-center font-mono font-bold text-xs text-primary shadow-[1.5px_1.5px_0px_#000000]"
+                        >
+                          CH3
+                        </div>
+                        <div class="flex flex-col">
+                          <span
+                            class="font-headline-sm text-[15px] font-bold text-primary hover:underline cursor-pointer"
+                            >Matte Aluminum Chassis V3</span
+                          >
+                          <span
+                            class="font-mono text-label-sm text-on-surface-variant"
+                            >SKU-8921-ALM • Serial: #AC-0988</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <span
+                        class="px-space-sm py-[2px] rounded-full bg-surface-container border border-primary font-label-sm text-label-sm text-on-surface"
+                        >Hardware</span
+                      >
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-primary"
+                          >Sector B-04 (Chicago)</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >Aisle 04 • Rack 08-C</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span
+                          class="font-mono font-bold text-primary text-[15px]"
+                          >4,120 units</span
+                        >
+                        <span
+                          class="font-mono text-label-sm text-on-surface-variant"
+                          >Min safety: 500</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span class="font-mono text-primary font-bold"
+                          >$85.00 / u</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >$350,200.00</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-center">
+                      <span
+                        class="inline-flex items-center gap-1.5 px-space-sm py-[3px] rounded-full bg-[#E7F8ED] text-primary border-[1.5px] border-[#15803D] font-label-sm text-label-sm"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-[#15803D]"
+                        ></span>
+                        Optimal
+                      </span>
+                    </td>
+                    <td class="py-space-md px-space-lg text-right">
+                      <div
+                        class="inline-flex items-center gap-space-xs justify-end"
+                      >
+                        <button
+                          class="px-space-sm py-1 rounded-full bg-surface-container-lowest hover:bg-surface-variant text-primary border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                          type="button"
+                        >
+                          Transfer
+                        </button>
+                        <button
+                          class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary hover:bg-primary hover:text-on-primary transition-colors"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[16px]"
+                            >more_vert</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Item Row 2 (Low Stock Warning) -->
+                  <tr
+                    class="bg-secondary-fixed/30 hover:bg-secondary-fixed/50 transition-colors"
+                  >
+                    <td class="py-space-md px-space-lg text-center">
+                      <input
+                        class="w-4 h-4 rounded border-2 border-primary accent-primary cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-xl bg-secondary-container text-on-primary border-[1.5px] border-primary flex items-center justify-center font-mono font-bold text-xs shadow-[1.5px_1.5px_0px_#000000]"
+                        >
+                          BAT
+                        </div>
+                        <div class="flex flex-col">
+                          <span
+                            class="font-headline-sm text-[15px] font-bold text-primary hover:underline cursor-pointer"
+                            >Li-Ion Cell Pack 48V HighCap</span
+                          >
+                          <span
+                            class="font-mono text-label-sm text-on-surface-variant"
+                            >SKU-4410-BAT • Serial: #LB-4819</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <span
+                        class="px-space-sm py-[2px] rounded-full bg-surface-container border border-primary font-label-sm text-label-sm text-on-surface"
+                        >Energy Storage</span
+                      >
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-primary"
+                          >Bay 12 (Austin)</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >Cold Bin 02 • Vault A</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span
+                          class="font-mono font-bold text-secondary text-[15px]"
+                          >86 units</span
+                        >
+                        <span
+                          class="font-mono text-label-sm text-secondary font-bold"
+                          >Min safety: 200</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span class="font-mono text-primary font-bold"
+                          >$210.00 / u</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >$18,060.00</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-center">
+                      <span
+                        class="inline-flex items-center gap-1.5 px-space-sm py-[3px] rounded-full bg-secondary-container text-on-primary border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000]"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"
+                        ></span>
+                        Low Reserve
+                      </span>
+                    </td>
+                    <td class="py-space-md px-space-lg text-right">
+                      <div
+                        class="inline-flex items-center gap-space-xs justify-end"
+                      >
+                        <button
+                          class="px-space-sm py-1 rounded-full bg-primary hover:bg-secondary text-on-primary border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                          type="button"
+                        >
+                          Reorder Now
+                        </button>
+                        <button
+                          class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary hover:bg-primary hover:text-on-primary transition-colors"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[16px]"
+                            >more_vert</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Item Row 3 -->
+                  <tr class="hover:bg-surface transition-colors">
+                    <td class="py-space-md px-space-lg text-center">
+                      <input
+                        class="w-4 h-4 rounded border-2 border-primary accent-primary cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-xl bg-surface-container border-[1.5px] border-primary flex items-center justify-center font-mono font-bold text-xs text-primary shadow-[1.5px_1.5px_0px_#000000]"
+                        >
+                          OPT
+                        </div>
+                        <div class="flex flex-col">
+                          <span
+                            class="font-headline-sm text-[15px] font-bold text-primary hover:underline cursor-pointer"
+                            >Optic Sensor Module 5GHz</span
+                          >
+                          <span
+                            class="font-mono text-label-sm text-on-surface-variant"
+                            >SKU-7729-OPT • Serial: #OP-8821</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <span
+                        class="px-space-sm py-[2px] rounded-full bg-surface-container border border-primary font-label-sm text-label-sm text-on-surface"
+                        >Assembly Kit</span
+                      >
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-primary"
+                          >East Hub (Newark)</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >Mezzanine Shelf 14</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span
+                          class="font-mono font-bold text-primary text-[15px]"
+                          >1,890 units</span
+                        >
+                        <span
+                          class="font-mono text-label-sm text-on-surface-variant"
+                          >Min safety: 300</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span class="font-mono text-primary font-bold"
+                          >$42.50 / u</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >$80,325.00</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-center">
+                      <span
+                        class="inline-flex items-center gap-1.5 px-space-sm py-[3px] rounded-full bg-[#E7F8ED] text-primary border-[1.5px] border-[#15803D] font-label-sm text-label-sm"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-[#15803D]"
+                        ></span>
+                        Optimal
+                      </span>
+                    </td>
+                    <td class="py-space-md px-space-lg text-right">
+                      <div
+                        class="inline-flex items-center gap-space-xs justify-end"
+                      >
+                        <button
+                          class="px-space-sm py-1 rounded-full bg-surface-container-lowest hover:bg-surface-variant text-primary border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                          type="button"
+                        >
+                          Transfer
+                        </button>
+                        <button
+                          class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary hover:bg-primary hover:text-on-primary transition-colors"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[16px]"
+                            >more_vert</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Item Row 4 (Critical Low) -->
+                  <tr
+                    class="bg-error-container/30 hover:bg-error-container/50 transition-colors"
+                  >
+                    <td class="py-space-md px-space-lg text-center">
+                      <input
+                        class="w-4 h-4 rounded border-2 border-primary accent-primary cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-xl bg-error text-on-error border-[1.5px] border-primary flex items-center justify-center font-mono font-bold text-xs shadow-[1.5px_1.5px_0px_#000000]"
+                        >
+                          MCU
+                        </div>
+                        <div class="flex flex-col">
+                          <span
+                            class="font-headline-sm text-[15px] font-bold text-primary hover:underline cursor-pointer"
+                            >Microcontroller Core MCU-X Dual</span
+                          >
+                          <span
+                            class="font-mono text-label-sm text-on-surface-variant"
+                            >SKU-1092-MCU • Serial: #MC-0012</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <span
+                        class="px-space-sm py-[2px] rounded-full bg-surface-container border border-primary font-label-sm text-label-sm text-on-surface"
+                        >Semiconductors</span
+                      >
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-primary"
+                          >West Dock (Seattle)</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >Secure Locker 01</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span class="font-mono font-bold text-error text-[15px]"
+                          >12 units</span
+                        >
+                        <span
+                          class="font-mono text-label-sm text-error font-bold"
+                          >Min safety: 150</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span class="font-mono text-primary font-bold"
+                          >$14.20 / u</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >$170.40</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-center">
+                      <span
+                        class="inline-flex items-center gap-1.5 px-space-sm py-[3px] rounded-full bg-error text-on-error border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000]"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-on-error animate-ping"
+                        ></span>
+                        Critical Low
+                      </span>
+                    </td>
+                    <td class="py-space-md px-space-lg text-right">
+                      <div
+                        class="inline-flex items-center gap-space-xs justify-end"
+                      >
+                        <button
+                          class="px-space-sm py-1 rounded-full bg-error text-on-error hover:bg-primary border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                          type="button"
+                        >
+                          Emergency PO
+                        </button>
+                        <button
+                          class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary hover:bg-primary hover:text-on-primary transition-colors"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[16px]"
+                            >more_vert</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Item Row 5 -->
+                  <tr class="hover:bg-surface transition-colors">
+                    <td class="py-space-md px-space-lg text-center">
+                      <input
+                        class="w-4 h-4 rounded border-2 border-primary accent-primary cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-xl bg-surface-container border-[1.5px] border-primary flex items-center justify-center font-mono font-bold text-xs text-primary shadow-[1.5px_1.5px_0px_#000000]"
+                        >
+                          MTR
+                        </div>
+                        <div class="flex flex-col">
+                          <span
+                            class="font-headline-sm text-[15px] font-bold text-primary hover:underline cursor-pointer"
+                            >High-Torque Stepper Motor 2.8Nm</span
+                          >
+                          <span
+                            class="font-mono text-label-sm text-on-surface-variant"
+                            >SKU-5521-MTR • Serial: #ST-9912</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <span
+                        class="px-space-sm py-[2px] rounded-full bg-surface-container border border-primary font-label-sm text-label-sm text-on-surface"
+                        >Actuators</span
+                      >
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-primary"
+                          >Sector B-04 (Chicago)</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >Heavy Bay 04</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span
+                          class="font-mono font-bold text-primary text-[15px]"
+                          >640 units</span
+                        >
+                        <span
+                          class="font-mono text-label-sm text-on-surface-variant"
+                          >Min safety: 100</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span class="font-mono text-primary font-bold"
+                          >$68.00 / u</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >$43,520.00</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-center">
+                      <span
+                        class="inline-flex items-center gap-1.5 px-space-sm py-[3px] rounded-full bg-[#E7F8ED] text-primary border-[1.5px] border-[#15803D] font-label-sm text-label-sm"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-[#15803D]"
+                        ></span>
+                        Optimal
+                      </span>
+                    </td>
+                    <td class="py-space-md px-space-lg text-right">
+                      <div
+                        class="inline-flex items-center gap-space-xs justify-end"
+                      >
+                        <button
+                          class="px-space-sm py-1 rounded-full bg-surface-container-lowest hover:bg-surface-variant text-primary border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                          type="button"
+                        >
+                          Transfer
+                        </button>
+                        <button
+                          class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary hover:bg-primary hover:text-on-primary transition-colors"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[16px]"
+                            >more_vert</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Item Row 6 (Out of Stock) -->
+                  <tr
+                    class="bg-surface-variant/40 hover:bg-surface-variant/70 transition-colors"
+                  >
+                    <td class="py-space-md px-space-lg text-center">
+                      <input
+                        class="w-4 h-4 rounded border-2 border-primary accent-primary cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-xl bg-inverse-surface text-inverse-on-surface border-[1.5px] border-primary flex items-center justify-center font-mono font-bold text-xs shadow-[1.5px_1.5px_0px_#000000]"
+                        >
+                          CRB
+                        </div>
+                        <div class="flex flex-col">
+                          <span
+                            class="font-headline-sm text-[15px] font-bold text-on-surface-variant line-through cursor-pointer"
+                            >Reinforced Carbon Strut 120cm</span
+                          >
+                          <span
+                            class="font-mono text-label-sm text-on-surface-variant"
+                            >SKU-3381-CRB • Serial: #CS-0044</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <span
+                        class="px-space-sm py-[2px] rounded-full bg-surface-container border border-primary font-label-sm text-label-sm text-on-surface"
+                        >Composites</span
+                      >
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-primary"
+                          >Bay 12 (Austin)</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >Zone A Staging</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span
+                          class="font-mono font-bold text-outline text-[15px]"
+                          >0 units</span
+                        >
+                        <span class="font-mono text-label-sm text-outline"
+                          >Min safety: 50</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span class="font-mono text-outline font-bold"
+                          >$125.00 / u</span
+                        >
+                        <span class="font-mono text-xs text-outline"
+                          >$0.00</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-center">
+                      <span
+                        class="inline-flex items-center gap-1.5 px-space-sm py-[3px] rounded-full bg-inverse-surface text-inverse-on-surface border-[1.5px] border-primary font-label-sm text-label-sm"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-outline-variant"
+                        ></span>
+                        Out of Stock
+                      </span>
+                    </td>
+                    <td class="py-space-md px-space-lg text-right">
+                      <div
+                        class="inline-flex items-center gap-space-xs justify-end"
+                      >
+                        <button
+                          class="px-space-sm py-1 rounded-full bg-primary text-on-primary hover:bg-secondary border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                          type="button"
+                        >
+                          Restock
+                        </button>
+                        <button
+                          class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary hover:bg-primary hover:text-on-primary transition-colors"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[16px]"
+                            >more_vert</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Item Row 7 -->
+                  <tr class="hover:bg-surface transition-colors">
+                    <td class="py-space-md px-space-lg text-center">
+                      <input
+                        class="w-4 h-4 rounded border-2 border-primary accent-primary cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="w-10 h-10 rounded-xl bg-surface-container border-[1.5px] border-primary flex items-center justify-center font-mono font-bold text-xs text-primary shadow-[1.5px_1.5px_0px_#000000]"
+                        >
+                          THM
+                        </div>
+                        <div class="flex flex-col">
+                          <span
+                            class="font-headline-sm text-[15px] font-bold text-primary hover:underline cursor-pointer"
+                            >Thermal Interface Paste 500g</span
+                          >
+                          <span
+                            class="font-mono text-label-sm text-on-surface-variant"
+                            >SKU-6619-THM • Serial: #TP-1290</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <span
+                        class="px-space-sm py-[2px] rounded-full bg-surface-container border border-primary font-label-sm text-label-sm text-on-surface"
+                        >Consumables</span
+                      >
+                    </td>
+                    <td class="py-space-md px-space-md">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-primary"
+                          >East Hub (Newark)</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >Chem Cabinet 03</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span
+                          class="font-mono font-bold text-primary text-[15px]"
+                          >2,450 units</span
+                        >
+                        <span
+                          class="font-mono text-label-sm text-on-surface-variant"
+                          >Min safety: 400</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-right">
+                      <div class="flex flex-col items-end">
+                        <span class="font-mono text-primary font-bold"
+                          >$18.00 / u</span
+                        >
+                        <span class="font-mono text-xs text-on-surface-variant"
+                          >$44,100.00</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-space-md px-space-md text-center">
+                      <span
+                        class="inline-flex items-center gap-1.5 px-space-sm py-[3px] rounded-full bg-[#E7F8ED] text-primary border-[1.5px] border-[#15803D] font-label-sm text-label-sm"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-[#15803D]"
+                        ></span>
+                        Optimal
+                      </span>
+                    </td>
+                    <td class="py-space-md px-space-lg text-right">
+                      <div
+                        class="inline-flex items-center gap-space-xs justify-end"
+                      >
+                        <button
+                          class="px-space-sm py-1 rounded-full bg-surface-container-lowest hover:bg-surface-variant text-primary border-[1.5px] border-primary font-label-sm text-label-sm shadow-[1.5px_1.5px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                          type="button"
+                        >
+                          Transfer
+                        </button>
+                        <button
+                          class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center border-[1.5px] border-primary hover:bg-primary hover:text-on-primary transition-colors"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[16px]"
+                            >more_vert</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Tactile Table Footer & Pagination Controls -->
+            <div
+              class="px-space-lg py-space-md border-t-2 border-primary bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md"
+            >
+              <!-- Records Counter & Page Size Selector -->
+              <div class="flex items-center gap-space-md">
+                <span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Showing
+                  <strong class="text-primary font-mono">1 – 7</strong> of
+                  <strong class="text-primary font-mono">14,820</strong> items
+                </span>
+                <div
+                  class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"
+                >
+                  <span>Show:</span>
+                  <select
+                    class="bg-surface rounded-lg px-2 py-0.5 border border-primary font-mono text-xs cursor-pointer"
+                  >
+                    <option>50 / page</option>
+                    <option>100 / page</option>
+                    <option>250 / page</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Page Stepper Pills -->
+              <div class="flex items-center gap-space-xs">
+                <button
+                  class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary border-[1.5px] border-primary flex items-center justify-center shadow-[1.5px_1.5px_0px_#000000] hover:bg-surface-variant disabled:opacity-50"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >chevron_left</span
+                  >
+                </button>
+                <button
+                  class="w-8 h-8 rounded-full bg-primary text-on-primary border-[1.5px] border-primary font-mono font-bold text-xs flex items-center justify-center shadow-[1.5px_1.5px_0px_#000000]"
+                  type="button"
+                >
+                  1
+                </button>
+                <button
+                  class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary border-[1.5px] border-primary font-mono font-bold text-xs flex items-center justify-center shadow-[1.5px_1.5px_0px_#000000] hover:bg-surface-variant"
+                  type="button"
+                >
+                  2
+                </button>
+                <button
+                  class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary border-[1.5px] border-primary font-mono font-bold text-xs flex items-center justify-center shadow-[1.5px_1.5px_0px_#000000] hover:bg-surface-variant"
+                  type="button"
+                >
+                  3
+                </button>
+                <span class="px-1 text-on-surface-variant font-mono">...</span>
+                <button
+                  class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary border-[1.5px] border-primary font-mono font-bold text-xs flex items-center justify-center shadow-[1.5px_1.5px_0px_#000000] hover:bg-surface-variant"
+                  type="button"
+                >
+                  42
+                </button>
+                <button
+                  class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary border-[1.5px] border-primary flex items-center justify-center shadow-[1.5px_1.5px_0px_#000000] hover:bg-surface-variant"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- Bottom Bento Auxiliary Strip: Rapid Transfer & Fast Barcode Register -->
+          <section
+            class="grid grid-cols-1 lg:grid-cols-3 gap-gutter pt-space-xs pb-space-lg"
+          >
+            <!-- Quick Transfer Card -->
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-space-lg border-2 border-primary shadow-[4px_4px_0px_#000000] flex flex-col justify-between"
+            >
+              <div
+                class="flex items-center justify-between pb-space-sm border-b-[1.5px] border-primary"
+              >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >swap_horiz</span
+                  >
+                  <span
+                    class="font-headline-sm text-headline-sm font-bold text-primary"
+                    >Inter-Hub Transfer</span
+                  >
+                </div>
+                <span class="font-mono text-label-sm text-on-surface-variant"
+                  >ROUTING</span
+                >
+              </div>
+              <div class="py-space-md flex flex-col gap-space-sm">
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Shift inventory quotas between Chicago Sector B-04 and Austin
+                  Bay 12 to resolve localized low stock flags.
+                </p>
+                <div
+                  class="flex items-center justify-between p-space-xs px-space-sm bg-surface-container rounded-xl border border-primary"
+                >
+                  <span class="font-mono text-xs font-bold text-primary"
+                    >TR-9821 Ready for dispatch</span
+                  >
+                  <span
+                    class="bg-surface-container-lowest px-2 py-0.5 rounded-full text-[10px] font-mono border border-primary"
+                    >350 Units</span
+                  >
+                </div>
+              </div>
+              <button
+                class="w-full flex items-center justify-center gap-space-xs bg-surface-container-lowest hover:bg-surface-variant text-primary rounded-full py-space-sm font-label-md text-label-md border-2 border-primary shadow-[2px_2px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                type="button"
+              >
+                <span>Initiate Stock Relocation</span>
+                <span class="material-symbols-outlined text-[16px]"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+            <!-- Barcode & Optical Scanner Terminal Card -->
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-space-lg border-2 border-primary shadow-[4px_4px_0px_#000000] flex flex-col justify-between"
+            >
+              <div
+                class="flex items-center justify-between pb-space-sm border-b-[1.5px] border-primary"
+              >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >qr_code_scanner</span
+                  >
+                  <span
+                    class="font-headline-sm text-headline-sm font-bold text-primary"
+                    >Optical Scan Station</span
+                  >
+                </div>
+                <span
+                  class="w-2 h-2 rounded-full bg-[#22C55E] border border-primary"
+                ></span>
+              </div>
+              <div class="py-space-md flex flex-col gap-space-sm">
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Connect wireless handheld terminal or utilize optical batch
+                  scanner to register incoming freight pallets.
+                </p>
+                <div class="flex items-center gap-space-sm">
+                  <input
+                    class="flex-1 bg-surface px-space-sm py-1.5 rounded-xl border-[1.5px] border-primary font-mono text-xs focus:outline-none"
+                    placeholder="Scan barcode or manual entry..."
+                    type="text"
+                  />
+                  <button
+                    class="px-space-sm py-1.5 bg-primary text-on-primary rounded-xl border border-primary font-mono text-xs font-bold shadow-[2px_2px_0px_#000000]"
+                    type="button"
+                  >
+                    VERIFY
+                  </button>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-on-surface-variant"
+              >
+                <span>Terminal ID: STK-SCANNER-4</span>
+                <span class="font-mono text-primary font-bold">READY</span>
+              </div>
+            </div>
+            <!-- Urgent Purchase Order Action Card (Neo-Brutalist Highlight Card) -->
+            <div
+              class="bg-secondary-container text-on-primary rounded-2xl p-space-lg border-2 border-primary shadow-[4px_4px_0px_#000000] flex flex-col justify-between"
+            >
+              <div
+                class="flex items-center justify-between pb-space-sm border-b-[1.5px] border-primary"
+              >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >notifications_active</span
+                  >
+                  <span
+                    class="font-headline-sm text-headline-sm font-bold text-primary"
+                    >14 Critical Alerts</span
+                  >
+                </div>
+                <span
+                  class="w-6 h-6 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center font-mono text-xs font-bold border border-primary"
+                  >!</span
+                >
+              </div>
+              <div class="py-space-md flex flex-col gap-space-xs">
+                <p class="font-body-md text-body-md text-primary font-medium">
+                  Lithium-Ion packs and microcontrollers are depleted below
+                  10-day buffer supply across 2 facilities.
+                </p>
+                <span
+                  class="font-mono text-xs text-primary bg-surface-container-lowest/60 px-space-sm py-1 rounded-lg border border-primary inline-block"
+                >
+                  Estimated lead time: 3.5 business days
+                </span>
+              </div>
+              <button
+                class="w-full flex items-center justify-center gap-space-xs bg-primary hover:bg-secondary text-on-primary rounded-full py-space-sm font-label-md text-label-md border-2 border-primary shadow-[2px_2px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px]"
+                type="button"
+              >
+                <span>Generate Auto Purchase Orders</span>
+                <span class="material-symbols-outlined text-[16px]">bolt</span>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-container-low border-t-[1.5px] border-primary py-space-sm"
+    >
+      <div
+        class="w-full px-margin flex flex-col sm:flex-row items-center justify-between gap-space-sm"
+      >
+        <div class="flex items-center gap-space-md">
+          <div class="flex items-center gap-space-xs">
+            <span
+              class="w-2 h-2 rounded-full bg-[#22C55E] border border-primary"
+            ></span
+            ><span class="font-label-sm text-label-sm text-on-surface"
+              >Sync Status: All warehouses online</span
+            >
+          </div>
+          <span class="text-on-surface-variant text-[10px]">•</span
+          ><span class="font-label-sm text-label-sm text-on-surface-variant"
+            >99.98% operational</span
+          >
+        </div>
+        <div class="flex items-center gap-space-md">
+          <span
+            class="font-label-sm text-label-sm text-on-surface-variant font-mono"
+            >v 14.05</span
+          ><span class="font-label-sm text-label-sm text-on-surface-variant"
+            >© Stockon Logistics Inc.</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
