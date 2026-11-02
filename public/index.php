@@ -1,6 +1,16 @@
-<?php
-$root = dirname(__DIR__);
-$pagetitle = 'Dashboard';
-$contentView = $root.'/resources/views/dashboard.php';
-require_once $root.'/resources/views/layouts/app.php';
-?>
+<?php 
+$routes = [
+    'dashboard' [
+        'title' => 'Dashboard',
+        'view' => '/resources/views/dashboard/index.php',
+    ],
+
+    'products' [
+        'title' => 'Products',
+        'view' => '/resources/views/products/index.php',
+    ],
+];
+
+$page = $_GET['page'] ?? 'dashboard';
+$pageTitle = $routes[$page]['title'];
+$contentView = $routes[$page]['view'];
